@@ -9,7 +9,9 @@ btnStop.disabled = true;
 const body = document.querySelector('body');
 
 function startChangeColor() {
-  intervalId = setInterval(()=>{body.style.backgroundColor = getRandomHexColor()}, 1000);
+  intervalId = setInterval(() => {
+    body.style.backgroundColor = getRandomHexColor();
+  }, 1000);
   changeButtons();
 }
 
