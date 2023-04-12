@@ -22,6 +22,7 @@ const options = {
   onClose(selectedDates) {
     selectedDate = selectedDates[0];
     msLeft = selectedDate - Date.now();
+    console.log(msLeft);
     if (msLeft < 0) {
       alert('Please choose a date in the future');
     } else {
@@ -33,8 +34,7 @@ flatpickr('#datetime-picker', options);
 
 function startTimer() {
   intervalId = setInterval(() => {
-    currentDate = Date.now();
-    msLeft = selectedDate - currentDate;
+    msLeft = selectedDate - Date.now();
     let convertedTime = convertMs(msLeft);
     if (msLeft <= 1000) {
       clearInterval(intervalId);
@@ -43,6 +43,7 @@ function startTimer() {
     hoursLeft.textContent = addLeadingZero(convertedTime.hours);
     minutesLeft.textContent = addLeadingZero(convertedTime.minutes);
     secondsLeft.textContent = addLeadingZero(convertedTime.seconds);
+    console.log(msLeft);
   }, 1000);
 }
 

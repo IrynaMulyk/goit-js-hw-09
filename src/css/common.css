@@ -41,3 +41,7 @@ button {
  background-color: #ff99bb;
  padding: 5px 10px;
 }
+button:disabled{
+  background-color: #cccccc;
+  color: #666666;
+}
